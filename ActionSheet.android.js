@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Animated,
-  BackAndroid,
+  BackHandler,
   Easing,
   PixelRatio,
   StyleSheet,
@@ -159,7 +159,7 @@ export default class ActionSheet extends React.Component {
     }).start();
 
     if (options.cancelButtonIndex) {
-      this._backAndroidEventListener = BackAndroid.addEventListener('actionSheetHardwareBackPress', this._onCancel);
+      this._backAndroidEventListener = BackHandler.addEventListener('actionSheetHardwareBackPress', this._onCancel);
     }
   }
 
